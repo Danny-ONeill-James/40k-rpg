@@ -1,19 +1,8 @@
-import { IOrigin } from './origin.interface';
+import { ICharacteristic } from './characteristic.interface';
 
 export interface ICharacter {
   name: string;
-  baseCharacteristics: ICharacterBaseCharacteristics;
+  baseCharacteristics: ICharacteristic;
+  modifiedCharacteristics: ICharacteristic;
   origin: string;
-}
-
-export interface ICharacterBaseCharacteristics {
-  ws: number;
-  bs: number;
-  str: number;
-  tgh: number;
-  ag: number;
-  int: number;
-  per: number;
-  wil: number;
-  fel: number;
 }
