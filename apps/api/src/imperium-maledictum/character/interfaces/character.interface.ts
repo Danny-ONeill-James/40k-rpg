@@ -1,9 +1,9 @@
 export interface ICharacter {
   name: string;
-  baseStats?: ICharacterBaseStats;
+  baseCharacteristics?: ICharacterBaseCharacteristics;
 }
 
-export interface ICharacterBaseStats {
+export interface ICharacterBaseCharacteristics {
   ws: number;
   bs: number;
   str: number;
