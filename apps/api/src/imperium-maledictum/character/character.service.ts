@@ -10,6 +10,7 @@ export class CharacterService {
   GenerateCharacter(): ICharacter {
     let newCharacter: ICharacter = {
       name: '',
+      experience: 0,
       baseCharacteristics: {
         ws: 0,
         bs: 0,
@@ -59,6 +60,9 @@ export class CharacterService {
 
     character.baseCharacteristics = baseCharacteristics;
     character.modifiedCharacteristics = { ...baseCharacteristics };
+
+    //TODO: will reduce if stats are moved will add this functionality in future update
+    character.experience = 50;
 
     return character;
   }
