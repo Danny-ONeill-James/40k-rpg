@@ -1,6 +1,9 @@
+import { IOrigin } from './origin.interface';
+
 export interface ICharacter {
   name: string;
-  baseCharacteristics?: ICharacterBaseCharacteristics;
+  baseCharacteristics: ICharacterBaseCharacteristics;
+  origin: string;
 }
 
 export interface ICharacterBaseCharacteristics {

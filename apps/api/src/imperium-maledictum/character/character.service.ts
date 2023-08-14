@@ -1,8 +1,10 @@
 import { Injectable } from '@nestjs/common';
+import { originsData } from '../../utilities/data/imperium-maledictum/origins.data';
 import {
   ICharacter,
   ICharacterBaseCharacteristics,
 } from './interfaces/character.interface';
+import { IOrigin } from './interfaces/origin.interface';
 
 @Injectable()
 export class CharacterService {
@@ -10,6 +12,7 @@ export class CharacterService {
     let newCharacter: ICharacter = {
       name: 'Your Character',
       baseCharacteristics: this.generateBaseCharacteristics(),
+      origin: this.randomOrigin(),
     };
 
     return newCharacter;
@@ -38,5 +41,21 @@ export class CharacterService {
     const newCharacteristic: number = dice1 + dice2 + 20;
 
     return newCharacteristic;
+  }
+
+  randomOrigin(): string {
+    const dice = 100;
+    const dice1 = Math.floor(Math.random() * dice) + 1;
+    console.log('Roll: ' + dice1);
+
+    const origin: IOrigin | undefined = originsData.find(
+      (origin) => origin.minRoll <= dice1 && dice1 <= origin.maxRoll,
+    );
+
+    if (origin !== undefined) {
+      return origin.name;
+    } else {
+      return originsData[5].name;
+    }
   }
 }

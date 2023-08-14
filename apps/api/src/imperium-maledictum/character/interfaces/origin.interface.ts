@@ -1,4 +1,5 @@
 export interface IOrigin {
   name: string;
-  roll: number;
+  minRoll: number;
+  maxRoll: number;
 }
