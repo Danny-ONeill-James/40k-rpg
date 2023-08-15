@@ -1,6 +1,4 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { originsDataOld } from '../../utilities/data/imperium-maledictum/origins.data';
-import { IOriginOld } from '../origin/interfaces/origin.interface';
 import { OriginService } from '../origin/origin.service';
 import { ICharacter } from './interfaces/character.interface';
 import { ICharacteristic } from './interfaces/characteristic.interface';
@@ -99,7 +97,7 @@ export class CharacterService {
 
     character.modifiedCharacteristics;
 
-    let characterModifier = {
+    const characterModifier = {
       characteristic: character.origin.primaryCharacteristic,
       modifier: 5,
     };
@@ -179,13 +177,6 @@ export class CharacterService {
   // character.modifiedCharacteristics.
 
   randomFation(character: ICharacter): ICharacter {
-    const dice = 100;
-    const dice1 = Math.floor(Math.random() * dice) + 1;
-
-    // const origin: IOriginOld | undefined = originsDataOld.find(
-    //   (origin) => origin.name == character.origin,
-    // );
-
     return character;
   }
 }
