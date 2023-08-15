@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import { CharacterModule } from './imperium-maledictum/character/character.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { FactionModule } from './imperium-maledictum/faction/faction.module';
+import { OriginModule } from './imperium-maledictum/origin/origin.module';
 
 @Module({
   imports: [
@@ -19,6 +21,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       synchronize: true,
     }),
     CharacterModule,
+    FactionModule,
+    OriginModule,
   ],
   controllers: [AppController],
   providers: [AppService],
