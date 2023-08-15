@@ -4,6 +4,8 @@ import { ICharacter } from './interfaces/character.interface';
 import { ICharacteristic } from './interfaces/characteristic.interface';
 import { IOrigin } from './interfaces/origin.interface';
 import { stringify } from 'querystring';
+import { IFaction } from './interfaces/faction.interface';
+import { factionsData } from 'src/utilities/data/imperium-maledictum/factions.data';
 
 @Injectable()
 export class CharacterService {
@@ -34,6 +36,7 @@ export class CharacterService {
         fel: 0,
       },
       origin: '',
+      faction: '',
     };
 
     newCharacter.name = 'Your Character';
@@ -41,6 +44,8 @@ export class CharacterService {
     newCharacter = this.generateBaseCharacteristics(newCharacter);
 
     newCharacter = this.randomOrigin(newCharacter);
+
+    newCharacter = this.randomFation(newCharacter);
 
     return newCharacter;
   }
@@ -134,6 +139,17 @@ export class CharacterService {
     character.per += modifiers.per;
     character.wil += modifiers.wil;
     character.fel += modifiers.fel;
+
+    return character;
+  }
+
+  randomFation(character: ICharacter): ICharacter {
+    const dice = 100;
+    const dice1 = Math.floor(Math.random() * dice) + 1;
+
+    const origin: IOrigin | undefined = originsData.find(
+      (origin) => origin.name == character.origin,
+    );
 
     return character;
   }
