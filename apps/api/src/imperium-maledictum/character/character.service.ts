@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { originsData } from '../../utilities/data/imperium-maledictum/origins.data';
+import { originsDataOld } from '../../utilities/data/imperium-maledictum/origins.data';
+
 import { IOriginOld } from '../origin/interfaces/origin.interface';
 import { ICharacter } from './interfaces/character.interface';
 import { ICharacteristic } from './interfaces/characteristic.interface';
@@ -83,14 +84,14 @@ export class CharacterService {
     const dice = 100;
     const dice1 = Math.floor(Math.random() * dice) + 1;
 
-    const origin: IOriginOld | undefined = originsData.find(
+    const origin: IOriginOld | undefined = originsDataOld.find(
       (origin) => origin.minRoll <= dice1 && dice1 <= origin.maxRoll,
     );
 
     if (origin !== undefined) {
       character.origin = origin.name;
     } else {
-      character.origin = originsData[5].name;
+      character.origin = originsDataOld[5].name;
       //TODO: produce an Error
       //Workaround, set to voidborn as most prominent
     }
@@ -144,7 +145,7 @@ export class CharacterService {
     const dice = 100;
     const dice1 = Math.floor(Math.random() * dice) + 1;
 
-    const origin: IOriginOld | undefined = originsData.find(
+    const origin: IOriginOld | undefined = originsDataOld.find(
       (origin) => origin.name == character.origin,
     );
 
