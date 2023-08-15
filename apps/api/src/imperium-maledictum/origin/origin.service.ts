@@ -14,7 +14,12 @@ export class OriginService {
 
   async createNew(newOrigins: CreateOriginDto[]): Promise<IOrigin[]> {
     newOrigins.forEach(async (newOrigin) => {
-      await this.originRepository.save(newOrigin);
+      if (
+        !(await this.originRepository.exist({
+          where: { name: newOrigin.name },
+        }))
+      )
+        await this.originRepository.save(newOrigin);
     });
 
     return newOrigins;
