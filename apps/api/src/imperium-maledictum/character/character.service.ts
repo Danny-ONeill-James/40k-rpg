@@ -1,12 +1,15 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { originsDataOld } from '../../utilities/data/imperium-maledictum/origins.data';
-
 import { IOriginOld } from '../origin/interfaces/origin.interface';
+import { OriginService } from '../origin/origin.service';
 import { ICharacter } from './interfaces/character.interface';
 import { ICharacteristic } from './interfaces/characteristic.interface';
 
 @Injectable()
 export class CharacterService {
+  @Inject(OriginService)
+  private readonly originService: OriginService;
+
   GenerateCharacter(): ICharacter {
     let newCharacter: ICharacter = {
       name: '',
