@@ -8,6 +8,9 @@ export class OriginEntity {
   @Column({ nullable: false })
   name: string;
 
-  @Column('numrange', { array: true })
-  rollRange: number;
+  @Column({ nullable: false })
+  rollRangeLow: number;
+
+  @Column({ nullable: false })
+  rollRangeHigh: number;
 }

@@ -8,7 +8,7 @@ export class OriginController {
   constructor(private originService: OriginService) {}
 
   @Post()
-  CreateNew(@Body() originDetails: CreateOriginDto[]): IOrigin[] {
+  CreateNew(@Body() originDetails: CreateOriginDto[]): Promise<IOrigin[]> {
     return this.originService.createNew(originDetails);
   }
 }

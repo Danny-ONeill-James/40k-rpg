@@ -1,6 +1,7 @@
 export class CreateOriginDto {
   name: string;
-  rollRange: number[];
+  rollRangeLow: number;
+  rollRangeHigh: number;
 }
 
 export class GetOriginDto extends CreateOriginDto {

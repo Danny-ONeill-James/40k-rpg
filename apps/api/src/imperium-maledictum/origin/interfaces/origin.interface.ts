@@ -4,7 +4,8 @@ import { IFaction } from '../../character/interfaces/faction.interface';
 export interface IOrigin {
   id?: string;
   name: string;
-  rollRange: number[];
+  rollRangeLow: number;
+  rollRangeHigh: number;
 }
 
 export interface IOriginOld {
