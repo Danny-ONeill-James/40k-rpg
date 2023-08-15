@@ -6,4 +6,5 @@ export interface ICharacter {
   baseCharacteristics: ICharacteristic;
   modifiedCharacteristics: ICharacteristic;
   origin: string;
+  faction: string;
 }
