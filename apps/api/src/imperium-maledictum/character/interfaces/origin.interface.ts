@@ -9,5 +9,5 @@ export interface IOrigin {
   secondaryCharacteristicModifier1: ICharacteristic;
   secondaryCharacteristicModifier2: ICharacteristic;
   secondaryCharacteristicModifier3: ICharacteristic;
-  factions: [{ faction: IFaction; minRoll: number; maxRoll: number }];
+  factions: { faction: IFaction; minRoll: number; maxRoll: number };
 }
