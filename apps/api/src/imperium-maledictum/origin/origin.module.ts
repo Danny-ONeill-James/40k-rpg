@@ -8,5 +8,6 @@ import { OriginController } from './origin.controller';
   imports: [TypeOrmModule.forFeature([OriginEntity])],
   providers: [OriginService],
   controllers: [OriginController],
+  exports: [OriginService],
 })
 export class OriginModule {}

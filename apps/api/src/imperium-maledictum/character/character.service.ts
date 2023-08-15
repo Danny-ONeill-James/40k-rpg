@@ -1,13 +1,14 @@
-import { Injectable } from '@nestjs/common';
-import { originsDataOld } from '../../utilities/data/imperium-maledictum/origins.data';
-
-import { IOriginOld } from '../origin/interfaces/origin.interface';
+import { Inject, Injectable } from '@nestjs/common';
+import { OriginService } from '../origin/origin.service';
 import { ICharacter } from './interfaces/character.interface';
 import { ICharacteristic } from './interfaces/characteristic.interface';
 
 @Injectable()
 export class CharacterService {
-  GenerateCharacter(): ICharacter {
+  @Inject(OriginService)
+  private readonly originService: OriginService;
+
+  async GenerateCharacter(): Promise<ICharacter> {
     let newCharacter: ICharacter = {
       name: '',
       experience: 0,
@@ -33,15 +34,23 @@ export class CharacterService {
         wil: 0,
         fel: 0,
       },
-      origin: '',
       faction: '',
+      origin: {
+        name: '',
+        rollRangeLow: 0,
+        rollRangeHigh: 0,
+        primaryCharacteristic: '',
+        secondaryCharacteristic1: '',
+        secondaryCharacteristic2: '',
+        secondaryCharacteristic3: '',
+      },
     };
 
     newCharacter.name = 'Your Character';
 
     newCharacter = this.generateBaseCharacteristics(newCharacter);
 
-    newCharacter = this.randomOrigin(newCharacter);
+    newCharacter = await this.randomOrigin(newCharacter);
 
     newCharacter = this.randomFation(newCharacter);
 
@@ -80,51 +89,46 @@ export class CharacterService {
     return newCharacteristic;
   }
 
-  randomOrigin(character: ICharacter): ICharacter {
+  async randomOrigin(character: ICharacter): Promise<ICharacter> {
     const dice = 100;
     const dice1 = Math.floor(Math.random() * dice) + 1;
 
-    const origin: IOriginOld | undefined = originsDataOld.find(
-      (origin) => origin.minRoll <= dice1 && dice1 <= origin.maxRoll,
-    );
+    character.origin = await this.originService.returnOriginFromDatabase(dice1);
 
-    if (origin !== undefined) {
-      character.origin = origin.name;
-    } else {
-      character.origin = originsDataOld[5].name;
-      //TODO: produce an Error
-      //Workaround, set to voidborn as most prominent
-    }
+    character.modifiedCharacteristics;
 
-    character.modifiedCharacteristics = this.updateModifiedCharacteristics(
-      character.modifiedCharacteristics,
-      origin!.primaryCharacteristicModifier,
+    const characterModifier = {
+      characteristic: character.origin.primaryCharacteristic,
+      modifier: 5,
+    };
+
+    character = this.updateModifiedCharacteristics(
+      character,
+      characterModifier,
     );
 
     const randSecondary = Math.floor(Math.random() * 3) + 1;
 
-    const secondaryCharacteristicModifier =
-      origin!.secondaryCharacteristicModifier1;
-
-    if (randSecondary == 2) {
-      const secondaryCharacteristicModifier =
-        origin!.secondaryCharacteristicModifier2;
+    if (randSecondary == 1) {
+      characterModifier.characteristic =
+        character.origin.secondaryCharacteristic1;
+    } else if (randSecondary == 2) {
+      characterModifier.characteristic =
+        character.origin.secondaryCharacteristic1;
     } else {
-      const secondaryCharacteristicModifier =
-        origin!.secondaryCharacteristicModifier3;
+      characterModifier.characteristic =
+        character.origin.secondaryCharacteristic1;
     }
 
-    character.modifiedCharacteristics = this.updateModifiedCharacteristics(
-      character.modifiedCharacteristics,
-      secondaryCharacteristicModifier,
+    character = this.updateModifiedCharacteristics(
+      character,
+      characterModifier,
     );
-
-    //TODO: Add item listed in rules
 
     return character;
   }
 
-  updateModifiedCharacteristics(
+  updateModifiedCharacteristicsOld(
     character: ICharacteristic,
     modifiers: ICharacteristic,
   ): ICharacteristic {
@@ -141,14 +145,38 @@ export class CharacterService {
     return character;
   }
 
+  updateModifiedCharacteristics(
+    character: ICharacter,
+    characteristicModifier: { characteristic: string; modifier: number },
+  ): ICharacter {
+    if (characteristicModifier.characteristic == 'ws') {
+      character.modifiedCharacteristics.ws += characteristicModifier.modifier;
+    } else if (characteristicModifier.characteristic == 'bs') {
+      character.modifiedCharacteristics.bs += characteristicModifier.modifier;
+    } else if (characteristicModifier.characteristic == 'str') {
+      character.modifiedCharacteristics.ws += characteristicModifier.modifier;
+    } else if (characteristicModifier.characteristic == 'tgh') {
+      character.modifiedCharacteristics.tgh += characteristicModifier.modifier;
+    } else if (characteristicModifier.characteristic == 'ag') {
+      character.modifiedCharacteristics.ag += characteristicModifier.modifier;
+    } else if (characteristicModifier.characteristic == 'int') {
+      character.modifiedCharacteristics.int += characteristicModifier.modifier;
+    } else if (characteristicModifier.characteristic == 'per') {
+      character.modifiedCharacteristics.per += characteristicModifier.modifier;
+    } else if (characteristicModifier.characteristic == 'wil') {
+      character.modifiedCharacteristics.wil += characteristicModifier.modifier;
+    } else if (characteristicModifier.characteristic == 'fel') {
+      character.modifiedCharacteristics.fel += characteristicModifier.modifier;
+    }
+
+    return character;
+  }
+
+  // 'character' in character;
+
+  // character.modifiedCharacteristics.
+
   randomFation(character: ICharacter): ICharacter {
-    const dice = 100;
-    const dice1 = Math.floor(Math.random() * dice) + 1;
-
-    const origin: IOriginOld | undefined = originsDataOld.find(
-      (origin) => origin.name == character.origin,
-    );
-
     return character;
   }
 }
