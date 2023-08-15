@@ -1,7 +1,14 @@
-import { ICharacteristic } from './characteristic.interface';
-import { IFaction } from './faction.interface';
+import { ICharacteristic } from '../../character/interfaces/characteristic.interface';
+import { IFaction } from '../../character/interfaces/faction.interface';
 
 export interface IOrigin {
+  id?: string;
+  name: string;
+  rollRangeLow: number;
+  rollRangeHigh: number;
+}
+
+export interface IOriginOld {
   name: string;
   minRoll: number;
   maxRoll: number;

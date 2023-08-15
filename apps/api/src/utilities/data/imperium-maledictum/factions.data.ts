@@ -1,5 +1,4 @@
 import { IFaction } from 'src/imperium-maledictum/character/interfaces/faction.interface';
-import { IOrigin } from 'src/imperium-maledictum/character/interfaces/origin.interface';
 
 export const factionsData: IFaction[] = [
   {

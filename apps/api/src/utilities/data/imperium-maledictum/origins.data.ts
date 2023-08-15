@@ -1,6 +1,6 @@
-import { IOrigin } from 'src/imperium-maledictum/character/interfaces/origin.interface';
+import { IOriginOld } from 'src/imperium-maledictum/origin/interfaces/origin.interface';
 
-export const originsData: IOrigin[] = [
+export const originsDataOld: IOriginOld[] = [
   {
     name: 'Agri World',
     minRoll: 1,
