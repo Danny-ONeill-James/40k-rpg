@@ -7,7 +7,7 @@ export class CharacterController {
   constructor(private characterService: CharacterService) {}
 
   @Get('generateCharacter')
-  GenerateCharacter(): ICharacter {
+  GenerateCharacter(): Promise<ICharacter> {
     return this.characterService.GenerateCharacter();
   }
 }

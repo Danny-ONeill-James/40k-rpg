@@ -10,7 +10,7 @@ export class CharacterService {
   @Inject(OriginService)
   private readonly originService: OriginService;
 
-  GenerateCharacter(): ICharacter {
+  async GenerateCharacter(): Promise<ICharacter> {
     let newCharacter: ICharacter = {
       name: '',
       experience: 0,
@@ -44,7 +44,7 @@ export class CharacterService {
 
     newCharacter = this.generateBaseCharacteristics(newCharacter);
 
-    newCharacter = this.randomOrigin(newCharacter);
+    newCharacter = await this.randomOrigin(newCharacter);
 
     newCharacter = this.randomFation(newCharacter);
 
@@ -83,21 +83,19 @@ export class CharacterService {
     return newCharacteristic;
   }
 
-  randomOrigin(character: ICharacter): ICharacter {
+  async randomOrigin(character: ICharacter): Promise<ICharacter> {
     const dice = 100;
     const dice1 = Math.floor(Math.random() * dice) + 1;
+
+    const returndOrigin = await this.originService.returnOriginFromDatabase(
+      dice1,
+    );
 
     const origin: IOriginOld | undefined = originsDataOld.find(
       (origin) => origin.minRoll <= dice1 && dice1 <= origin.maxRoll,
     );
 
-    if (origin !== undefined) {
-      character.origin = origin.name;
-    } else {
-      character.origin = originsDataOld[5].name;
-      //TODO: produce an Error
-      //Workaround, set to voidborn as most prominent
-    }
+    character.origin = returndOrigin.name;
 
     character.modifiedCharacteristics = this.updateModifiedCharacteristics(
       character.modifiedCharacteristics,
