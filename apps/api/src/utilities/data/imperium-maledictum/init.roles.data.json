@@ -1,20 +1,26 @@
 [
   {
-    "name": "Interlocutor"
+    "name": "Interlocutor",
+    "rollNumber": 1
   },
   {
-    "name": "Mystic"
+    "name": "Mystic",
+    "rollNumber": 2
   },
   {
-    "name": "Penumbra"
+    "name": "Penumbra",
+    "rollNumber": 3
   },
   {
-    "name": "Savant"
+    "name": "Savant",
+    "rollNumber": 4
   },
   {
-    "name": "Warrior"
+    "name": "Warrior",
+    "rollNumber": 5
   },
   {
-    "name": "Zealot"
+    "name": "Zealot",
+    "rollNumber": 6
   }
 ]

@@ -7,4 +7,7 @@ export class RoleEntity {
 
   @Column({ nullable: false })
   name: string;
+
+  @Column({ nullable: false })
+  rollNumber: number;
 }
