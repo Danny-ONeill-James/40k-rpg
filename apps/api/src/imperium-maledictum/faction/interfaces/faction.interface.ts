@@ -1,8 +1,6 @@
-export interface IOrigin {
+export interface IFaction {
   id?: string;
   name: string;
-  rollRangeLow: number;
-  rollRangeHigh: number;
   primaryCharacteristic: string;
   secondaryCharacteristic1: string;
   secondaryCharacteristic2: string;

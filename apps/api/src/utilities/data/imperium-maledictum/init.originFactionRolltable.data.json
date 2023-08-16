@@ -1,0 +1,434 @@
+[
+  {
+    "origin": "Agri World",
+    "faction": "Adeptus Administratum",
+    "rollRangeLow": 1,
+    "rollRangeHigh": 26
+  },
+  {
+    "origin": "Agri World",
+    "faction": "Adeptus Astra Telepathica",
+    "rollRangeLow": 27,
+    "rollRangeHigh": 27
+  },
+  {
+    "origin": "Agri World",
+    "faction": "Adeptus Mechanicus",
+    "rollRangeLow": 28,
+    "rollRangeHigh": 37
+  },
+  {
+    "origin": "Agri World",
+    "faction": "Adeptus Ministorum",
+    "rollRangeLow": 38,
+    "rollRangeHigh": 51
+  },
+  {
+    "origin": "Agri World",
+    "faction": "Astra Militarum",
+    "rollRangeLow": 52,
+    "rollRangeHigh": 65
+  },
+  {
+    "origin": "Agri World",
+    "faction": "Imperial Fleet",
+    "rollRangeLow": 66,
+    "rollRangeHigh": 77
+  },
+  {
+    "origin": "Agri World",
+    "faction": "Infractionist",
+    "rollRangeLow": 78,
+    "rollRangeHigh": 96
+  },
+  {
+    "origin": "Agri World",
+    "faction": "The Inquisition",
+    "rollRangeLow": 97,
+    "rollRangeHigh": 98
+  },
+  {
+    "origin": "Agri World",
+    "faction": "Rogue Trader Dynasty",
+    "rollRangeLow": 99,
+    "rollRangeHigh": 100
+  },
+  {
+    "origin": "Feral World",
+    "faction": "Adeptus Administratum",
+    "rollRangeLow": 1,
+    "rollRangeHigh": 26
+  },
+  {
+    "origin": "Feral World",
+    "faction": "Adeptus Astra Telepathica",
+    "rollRangeLow": 27,
+    "rollRangeHigh": 27
+  },
+  {
+    "origin": "Feral World",
+    "faction": "Adeptus Mechanicus",
+    "rollRangeLow": 28,
+    "rollRangeHigh": 29
+  },
+  {
+    "origin": "Feral World",
+    "faction": "Adeptus Ministorum",
+    "rollRangeLow": 30,
+    "rollRangeHigh": 45
+  },
+  {
+    "origin": "Feral World",
+    "faction": "Astra Militarum",
+    "rollRangeLow": 46,
+    "rollRangeHigh": 79
+  },
+  {
+    "origin": "Feral World",
+    "faction": "Imperial Fleet",
+    "rollRangeLow": 80,
+    "rollRangeHigh": 83
+  },
+  {
+    "origin": "Feral World",
+    "faction": "Infractionist",
+    "rollRangeLow": 84,
+    "rollRangeHigh": 96
+  },
+  {
+    "origin": "Feral World",
+    "faction": "The Inquisition",
+    "rollRangeLow": 97,
+    "rollRangeHigh": 98
+  },
+  {
+    "origin": "Feral World",
+    "faction": "Rogue Trader Dynasty",
+    "rollRangeLow": 99,
+    "rollRangeHigh": 100
+  },
+  {
+    "origin": "Feudal World",
+    "faction": "Adeptus Administratum",
+    "rollRangeLow": 1,
+    "rollRangeHigh": 14
+  },
+  {
+    "origin": "Feudal World",
+    "faction": "Adeptus Astra Telepathica",
+    "rollRangeLow": 15,
+    "rollRangeHigh": 15
+  },
+  {
+    "origin": "Feudal World",
+    "faction": "Adeptus Mechanicus",
+    "rollRangeLow": 16,
+    "rollRangeHigh": 17
+  },
+  {
+    "origin": "Feudal World",
+    "faction": "Adeptus Ministorum",
+    "rollRangeLow": 18,
+    "rollRangeHigh": 30
+  },
+  {
+    "origin": "Feudal World",
+    "faction": "Astra Militarum",
+    "rollRangeLow": 31,
+    "rollRangeHigh": 82
+  },
+  {
+    "origin": "Feudal World",
+    "faction": "Imperial Fleet",
+    "rollRangeLow": 83,
+    "rollRangeHigh": 92
+  },
+  {
+    "origin": "Feudal World",
+    "faction": "Infractionist",
+    "rollRangeLow": 93,
+    "rollRangeHigh": 97
+  },
+  {
+    "origin": "Feudal World",
+    "faction": "The Inquisition",
+    "rollRangeLow": 98,
+    "rollRangeHigh": 99
+  },
+  {
+    "origin": "Feudal World",
+    "faction": "Rogue Trader Dynasty",
+    "rollRangeLow": 100,
+    "rollRangeHigh": 100
+  },
+  {
+    "origin": "Forge World",
+    "faction": "Adeptus Administratum",
+    "rollRangeLow": 1,
+    "rollRangeHigh": 20
+  },
+  {
+    "origin": "Forge World",
+    "faction": "Adeptus Astra Telepathica",
+    "rollRangeLow": 21,
+    "rollRangeHigh": 21
+  },
+  {
+    "origin": "Forge World",
+    "faction": "Adeptus Mechanicus",
+    "rollRangeLow": 22,
+    "rollRangeHigh": 71
+  },
+  {
+    "origin": "Forge World",
+    "faction": "Adeptus Ministorum",
+    "rollRangeLow": 72,
+    "rollRangeHigh": 73
+  },
+  {
+    "origin": "Forge World",
+    "faction": "Astra Militarum",
+    "rollRangeLow": 74,
+    "rollRangeHigh": 74
+  },
+  {
+    "origin": "Forge World",
+    "faction": "Imperial Fleet",
+    "rollRangeLow": 75,
+    "rollRangeHigh": 84
+  },
+  {
+    "origin": "Forge World",
+    "faction": "Infractionist",
+    "rollRangeLow": 85,
+    "rollRangeHigh": 98
+  },
+  {
+    "origin": "Forge World",
+    "faction": "The Inquisition",
+    "rollRangeLow": 99,
+    "rollRangeHigh": 99
+  },
+  {
+    "origin": "Forge World",
+    "faction": "Rogue Trader Dynasty",
+    "rollRangeLow": 100,
+    "rollRangeHigh": 100
+  },
+  {
+    "origin": "Hive World",
+    "faction": "Adeptus Administratum",
+    "rollRangeLow": 1,
+    "rollRangeHigh": 24
+  },
+  {
+    "origin": "Hive World",
+    "faction": "Adeptus Astra Telepathica",
+    "rollRangeLow": 25,
+    "rollRangeHigh": 25
+  },
+  {
+    "origin": "Hive World",
+    "faction": "Adeptus Mechanicus",
+    "rollRangeLow": 26,
+    "rollRangeHigh": 37
+  },
+  {
+    "origin": "Hive World",
+    "faction": "Adeptus Ministorum",
+    "rollRangeLow": 38,
+    "rollRangeHigh": 49
+  },
+  {
+    "origin": "Hive World",
+    "faction": "Astra Militarum",
+    "rollRangeLow": 50,
+    "rollRangeHigh": 69
+  },
+  {
+    "origin": "Hive World",
+    "faction": "Imperial Fleet",
+    "rollRangeLow": 70,
+    "rollRangeHigh": 79
+  },
+  {
+    "origin": "Hive World",
+    "faction": "Infractionist",
+    "rollRangeLow": 80,
+    "rollRangeHigh": 96
+  },
+  {
+    "origin": "Hive World",
+    "faction": "The Inquisition",
+    "rollRangeLow": 97,
+    "rollRangeHigh": 98
+  },
+  {
+    "origin": "Hive World",
+    "faction": "Rogue Trader Dynasty",
+    "rollRangeLow": 99,
+    "rollRangeHigh": 100
+  },
+  {
+    "origin": "Schola Progenium",
+    "faction": "Adeptus Administratum",
+    "rollRangeLow": 1,
+    "rollRangeHigh": 20
+  },
+  {
+    "origin": "Schola Progenium",
+    "faction": "Adeptus Astra Telepathica",
+    "rollRangeLow": 21,
+    "rollRangeHigh": 21
+  },
+  {
+    "origin": "Schola Progenium",
+    "faction": "Adeptus Mechanicus",
+    "rollRangeLow": 22,
+    "rollRangeHigh": 23
+  },
+  {
+    "origin": "Schola Progenium",
+    "faction": "Adeptus Ministorum",
+    "rollRangeLow": 24,
+    "rollRangeHigh": 45
+  },
+  {
+    "origin": "Schola Progenium",
+    "faction": "Astra Militarum",
+    "rollRangeLow": 46,
+    "rollRangeHigh": 67
+  },
+  {
+    "origin": "Schola Progenium",
+    "faction": "Imperial Fleet",
+    "rollRangeLow": 68,
+    "rollRangeHigh": 74
+  },
+  {
+    "origin": "Schola Progenium",
+    "faction": "Infractionist",
+    "rollRangeLow": 0,
+    "rollRangeHigh": 0
+  },
+  {
+    "origin": "Schola Progenium",
+    "faction": "The Inquisition",
+    "rollRangeLow": 75,
+    "rollRangeHigh": 94
+  },
+  {
+    "origin": "Schola Progenium",
+    "faction": "Rogue Trader Dynasty",
+    "rollRangeLow": 95,
+    "rollRangeHigh": 100
+  },
+  {
+    "origin": "Shrine World",
+    "faction": "Adeptus Administratum",
+    "rollRangeLow": 1,
+    "rollRangeHigh": 14
+  },
+  {
+    "origin": "Shrine World",
+    "faction": "Adeptus Astra Telepathica",
+    "rollRangeLow": 15,
+    "rollRangeHigh": 15
+  },
+  {
+    "origin": "Shrine World",
+    "faction": "Adeptus Mechanicus",
+    "rollRangeLow": 16,
+    "rollRangeHigh": 17
+  },
+  {
+    "origin": "Shrine World",
+    "faction": "Adeptus Ministorum",
+    "rollRangeLow": 18,
+    "rollRangeHigh": 57
+  },
+  {
+    "origin": "Shrine World",
+    "faction": "Astra Militarum",
+    "rollRangeLow": 58,
+    "rollRangeHigh": 71
+  },
+  {
+    "origin": "Shrine World",
+    "faction": "Imperial Fleet",
+    "rollRangeLow": 72,
+    "rollRangeHigh": 83
+  },
+  {
+    "origin": "Shrine World",
+    "faction": "Infractionist",
+    "rollRangeLow": 84,
+    "rollRangeHigh": 97
+  },
+  {
+    "origin": "Shrine World",
+    "faction": "The Inquisition",
+    "rollRangeLow": 98,
+    "rollRangeHigh": 99
+  },
+  {
+    "origin": "Shrine World",
+    "faction": "Rogue Trader Dynasty",
+    "rollRangeLow": 100,
+    "rollRangeHigh": 100
+  },
+  {
+    "origin": "Voidborn",
+    "faction": "Adeptus Administratum",
+    "rollRangeLow": 1,
+    "rollRangeHigh": 14
+  },
+  {
+    "origin": "Voidborn",
+    "faction": "Adeptus Astra Telepathica",
+    "rollRangeLow": 15,
+    "rollRangeHigh": 24
+  },
+  {
+    "origin": "Voidborn",
+    "faction": "Adeptus Mechanicus",
+    "rollRangeLow": 25,
+    "rollRangeHigh": 34
+  },
+  {
+    "origin": "Voidborn",
+    "faction": "Adeptus Ministorum",
+    "rollRangeLow": 35,
+    "rollRangeHigh": 38
+  },
+  {
+    "origin": "Voidborn",
+    "faction": "Astra Militarum",
+    "rollRangeLow": 39,
+    "rollRangeHigh": 52
+  },
+  {
+    "origin": "Voidborn",
+    "faction": "Imperial Fleet",
+    "rollRangeLow": 53,
+    "rollRangeHigh": 82
+  },
+  {
+    "origin": "Voidborn",
+    "faction": "Infractionist",
+    "rollRangeLow": 83,
+    "rollRangeHigh": 87
+  },
+  {
+    "origin": "Voidborn",
+    "faction": "The Inquisition",
+    "rollRangeLow": 88,
+    "rollRangeHigh": 89
+  },
+  {
+    "origin": "Voidborn",
+    "faction": "Rogue Trader Dynasty",
+    "rollRangeLow": 90,
+    "rollRangeHigh": 100
+  }
+]

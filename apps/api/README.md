@@ -32,6 +32,17 @@
 $ npm install
 ```
 
+docker compose from turborepo root directory
+
+Using the JSON files located under \src\utilities\data\imperium-maledictum POST to the specified localhost, each stage is to be complete before the next
+
+Stage 1
+init.origins.data.json - http://localhost:3000/origin
+init.factions.data.json - http://localhost:3000/faction
+
+Stage 2
+init.originFactionRolltable.data.json - http://localhost:3000/origin/originFactionRollTable
+
 ## Running the app
 
 ```bash

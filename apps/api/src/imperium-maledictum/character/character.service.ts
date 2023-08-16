@@ -1,4 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
+import { FactionService } from '../faction/faction.service';
 import { OriginService } from '../origin/origin.service';
 import { ICharacter } from './interfaces/character.interface';
 import { ICharacteristic } from './interfaces/characteristic.interface';
@@ -7,6 +8,8 @@ import { ICharacteristic } from './interfaces/characteristic.interface';
 export class CharacterService {
   @Inject(OriginService)
   private readonly originService: OriginService;
+  @Inject(FactionService)
+  private readonly factionService: FactionService;
 
   async GenerateCharacter(): Promise<ICharacter> {
     let newCharacter: ICharacter = {
@@ -34,8 +37,15 @@ export class CharacterService {
         wil: 0,
         fel: 0,
       },
-      faction: '',
+      faction: {
+        name: '',
+        primaryCharacteristic: '',
+        secondaryCharacteristic1: '',
+        secondaryCharacteristic2: '',
+        secondaryCharacteristic3: '',
+      },
       origin: {
+        id: '',
         name: '',
         rollRangeLow: 0,
         rollRangeHigh: 0,
@@ -52,7 +62,7 @@ export class CharacterService {
 
     newCharacter = await this.randomOrigin(newCharacter);
 
-    newCharacter = this.randomFation(newCharacter);
+    newCharacter = await this.randomFation(newCharacter);
 
     return newCharacter;
   }
@@ -107,6 +117,7 @@ export class CharacterService {
       characterModifier,
     );
 
+    //TODO: turn into own function: updateRandomSecondary: Start
     const randSecondary = Math.floor(Math.random() * 3) + 1;
 
     if (randSecondary == 1) {
@@ -124,6 +135,7 @@ export class CharacterService {
       character,
       characterModifier,
     );
+    //TODO: turn into own function: updateRandomSecondary: End
 
     return character;
   }
@@ -172,11 +184,61 @@ export class CharacterService {
     return character;
   }
 
-  // 'character' in character;
+  async randomFation(character: ICharacter): Promise<ICharacter> {
+    const dice = 100;
+    const dice1 = Math.floor(Math.random() * dice) + 1;
 
-  // character.modifiedCharacteristics.
+    character.faction = await this.factionService.returnFactionFromDatabase(
+      character.origin,
+      dice1,
+    );
 
-  randomFation(character: ICharacter): ICharacter {
+    character.modifiedCharacteristics;
+
+    const characterModifier = {
+      characteristic: character.faction.primaryCharacteristic,
+      modifier: 5,
+    };
+
+    character = this.updateModifiedCharacteristics(
+      character,
+      characterModifier,
+    );
+
+    //TODO: turn into own function: updateRandomSecondary: Start
+
+    const randSecondary = Math.floor(Math.random() * 3) + 1;
+
+    if (randSecondary == 1) {
+      characterModifier.characteristic =
+        character.faction.secondaryCharacteristic1;
+    } else if (randSecondary == 2) {
+      characterModifier.characteristic =
+        character.faction.secondaryCharacteristic1;
+    } else {
+      characterModifier.characteristic =
+        character.faction.secondaryCharacteristic1;
+    }
+
+    character = this.updateModifiedCharacteristics(
+      character,
+      characterModifier,
+    );
+
+    //TODO: turn into own function: updateRandomSecondary: End
+
+    //TODO: Add Advances
+
+    //TODO: Add Talent
+
+    //TODO: Add influence
+
+    //TODO: Add items
+
+    //TODO: Add solars (Money)
+
+    //TODO: Add Duty
+
     return character;
   }
 }
