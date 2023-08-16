@@ -1,15 +1,19 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-import { FactionEntity } from './entities/faction.entity';
-import { CreatefactionDto } from './dtos/faction.dto';
+import { LessThanOrEqual, MoreThanOrEqual, Repository } from 'typeorm';
 import { IFaction } from '../character/interfaces/faction.interface';
+import { CreatefactionDto } from './dtos/faction.dto';
+import { FactionEntity } from './entities/faction.entity';
+import { OriginToFactionRollTableEntity } from '../origin/entities/origin-to-faction-roll-table.entity';
+import { IOrigin } from '../origin/interfaces/origin.interface';
 
 @Injectable()
 export class FactionService {
   constructor(
     @InjectRepository(FactionEntity)
     private factionRepository: Repository<FactionEntity>,
+    @InjectRepository(OriginToFactionRollTableEntity)
+    private originToFactionRollTableRepository: Repository<OriginToFactionRollTableEntity>,
   ) {}
 
   async createNew(newFactions: CreatefactionDto[]): Promise<IFaction[]> {
@@ -23,6 +27,23 @@ export class FactionService {
     });
 
     return newFactions;
+  }
+
+  async returnFactionFromDatabase(
+    origin: IOrigin,
+    roll: number,
+  ): Promise<IFaction> {
+    const returnedFaction =
+      await this.originToFactionRollTableRepository.findOne({
+        where: {
+          origin: { id: origin.id },
+          rollRangeLow: LessThanOrEqual(roll),
+          rollRangeHigh: MoreThanOrEqual(roll),
+        },
+        relations: { faction: true },
+      });
+
+    return returnedFaction!.faction;
   }
 
   async findFactionByName(factionName: string): Promise<IFaction> {

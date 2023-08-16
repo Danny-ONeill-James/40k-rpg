@@ -1,15 +1,18 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { FactionEntity } from './entities/faction.entity';
-import { FactionService } from './faction.service';
-import { FactionController } from './faction.controller';
-import { OriginEntity } from '../origin/entities/origin.entity';
-import { OriginService } from '../origin/origin.service';
 import { OriginModule } from '../origin/origin.module';
+import { FactionEntity } from './entities/faction.entity';
+import { FactionController } from './faction.controller';
+import { FactionService } from './faction.service';
+import { OriginToFactionRollTableEntity } from '../origin/entities/origin-to-faction-roll-table.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([FactionEntity]), OriginModule],
+  imports: [
+    TypeOrmModule.forFeature([FactionEntity, OriginToFactionRollTableEntity]),
+    OriginModule,
+  ],
   providers: [FactionService],
   controllers: [FactionController],
+  exports: [FactionModule],
 })
 export class FactionModule {}
