@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { OriginToFactionRollTable } from './origin-to-faction-roll-table.entity';
 
 @Entity()
 export class OriginEntity {
@@ -25,4 +26,10 @@ export class OriginEntity {
 
   @Column({ nullable: false })
   secondaryCharacteristic3: string;
+
+  @OneToMany(
+    () => OriginToFactionRollTable,
+    (originToFactionRollTable) => originToFactionRollTable.origin,
+  )
+  faction: OriginToFactionRollTable[];
 }
