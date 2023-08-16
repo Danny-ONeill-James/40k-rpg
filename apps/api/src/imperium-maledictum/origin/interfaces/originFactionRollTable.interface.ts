@@ -1,4 +1,3 @@
-import { ICharacteristic } from '../../character/interfaces/characteristic.interface';
 import { IFaction } from '../../faction/interfaces/faction.interface';
 import { IOrigin } from './origin.interface';
 
