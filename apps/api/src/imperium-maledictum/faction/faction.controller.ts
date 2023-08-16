@@ -1,5 +1,5 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { IFaction } from '../character/interfaces/faction.interface';
+import { IFaction } from './interfaces/faction.interface';
 import { CreatefactionDto } from './dtos/faction.dto';
 import { FactionService } from './faction.service';
 

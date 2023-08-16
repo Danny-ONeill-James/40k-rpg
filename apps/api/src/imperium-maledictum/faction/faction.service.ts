@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { LessThanOrEqual, MoreThanOrEqual, Repository } from 'typeorm';
-import { IFaction } from '../character/interfaces/faction.interface';
+import { IFaction } from './interfaces/faction.interface';
 import { CreatefactionDto } from './dtos/faction.dto';
 import { FactionEntity } from './entities/faction.entity';
 import { OriginToFactionRollTableEntity } from '../origin/entities/origin-to-faction-roll-table.entity';

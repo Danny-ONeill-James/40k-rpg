@@ -1,4 +1,4 @@
-import { IFaction } from 'src/imperium-maledictum/character/interfaces/faction.interface';
+import { IFaction } from 'src/imperium-maledictum/faction/interfaces/faction.interface';
 import { IOrigin } from '../interfaces/origin.interface';
 
 export class InputOriginFactionRollTableDto {

@@ -1,5 +1,5 @@
 import { ICharacteristic } from '../../character/interfaces/characteristic.interface';
-import { IFaction } from '../../character/interfaces/faction.interface';
+import { IFaction } from '../../faction/interfaces/faction.interface';
 import { IOrigin } from './origin.interface';
 
 export interface IOriginFactionRollTable {
