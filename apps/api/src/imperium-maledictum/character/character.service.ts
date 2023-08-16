@@ -227,6 +227,18 @@ export class CharacterService {
 
     //TODO: turn into own function: updateRandomSecondary: End
 
+    //TODO: Add Advances
+
+    //TODO: Add Talent
+
+    //TODO: Add influence
+
+    //TODO: Add items
+
+    //TODO: Add solars (Money)
+
+    //TODO: Add Duty
+
     return character;
   }
 }
