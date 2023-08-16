@@ -172,10 +172,6 @@ export class CharacterService {
     return character;
   }
 
-  // 'character' in character;
-
-  // character.modifiedCharacteristics.
-
   randomFation(character: ICharacter): ICharacter {
     return character;
   }
