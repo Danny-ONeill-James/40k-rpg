@@ -117,6 +117,7 @@ export class CharacterService {
       characterModifier,
     );
 
+    //TODO: turn into own function: updateRandomSecondary: Start
     const randSecondary = Math.floor(Math.random() * 3) + 1;
 
     if (randSecondary == 1) {
@@ -134,6 +135,7 @@ export class CharacterService {
       character,
       characterModifier,
     );
+    //TODO: turn into own function: updateRandomSecondary: End
 
     return character;
   }
@@ -190,6 +192,41 @@ export class CharacterService {
       character.origin,
       dice1,
     );
+
+    character.modifiedCharacteristics;
+
+    const characterModifier = {
+      characteristic: character.faction.primaryCharacteristic,
+      modifier: 5,
+    };
+
+    character = this.updateModifiedCharacteristics(
+      character,
+      characterModifier,
+    );
+
+    //TODO: turn into own function: updateRandomSecondary: Start
+
+    const randSecondary = Math.floor(Math.random() * 3) + 1;
+
+    if (randSecondary == 1) {
+      characterModifier.characteristic =
+        character.faction.secondaryCharacteristic1;
+    } else if (randSecondary == 2) {
+      characterModifier.characteristic =
+        character.faction.secondaryCharacteristic1;
+    } else {
+      characterModifier.characteristic =
+        character.faction.secondaryCharacteristic1;
+    }
+
+    character = this.updateModifiedCharacteristics(
+      character,
+      characterModifier,
+    );
+
+    //TODO: turn into own function: updateRandomSecondary: End
+
     return character;
   }
 }
