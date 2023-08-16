@@ -3,7 +3,7 @@ import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { OriginEntity } from './origin.entity';
 
 @Entity()
-export class OriginToFactionRollTable {
+export class OriginToFactionRollTableEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -14,8 +14,8 @@ export class OriginToFactionRollTable {
   RollRangeHigh: number;
 
   @ManyToOne(() => OriginEntity, (originEntity) => originEntity.faction)
-  faction: OriginEntity;
+  origin: OriginEntity;
 
   @ManyToOne(() => FactionEntity, (factionEntity) => factionEntity.origin)
-  origin: FactionEntity;
+  faction: FactionEntity;
 }

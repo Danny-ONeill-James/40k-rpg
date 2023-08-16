@@ -9,19 +9,36 @@ import { IFaction } from '../character/interfaces/faction.interface';
 export class FactionService {
   constructor(
     @InjectRepository(FactionEntity)
-    private originRepository: Repository<FactionEntity>,
+    private factionRepository: Repository<FactionEntity>,
   ) {}
 
   async createNew(newFactions: CreatefactionDto[]): Promise<IFaction[]> {
     newFactions.forEach(async (newFaction) => {
       if (
-        !(await this.originRepository.exist({
+        !(await this.factionRepository.exist({
           where: { name: newFaction.name },
         }))
       )
-        await this.originRepository.save(newFaction);
+        await this.factionRepository.save(newFaction);
     });
 
     return newFactions;
+  }
+
+  async findFactionByName(factionName: string): Promise<IFaction> {
+    const returnedFaction = await this.factionRepository.findOne({
+      where: { name: factionName },
+    });
+
+    if (!returnedFaction) {
+      throw new Error('Faction not found');
+    }
+
+    const foundfaction: IFaction = {
+      id: returnedFaction!.id,
+      name: returnedFaction!.name,
+    };
+
+    return foundfaction;
   }
 }

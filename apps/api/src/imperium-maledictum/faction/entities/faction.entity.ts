@@ -1,4 +1,4 @@
-import { OriginToFactionRollTable } from 'src/imperium-maledictum/origin/entities/origin-to-faction-roll-table.entity';
+import { OriginToFactionRollTableEntity } from 'src/imperium-maledictum/origin/entities/origin-to-faction-roll-table.entity';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
@@ -10,8 +10,8 @@ export class FactionEntity {
   name: string;
 
   @OneToMany(
-    () => OriginToFactionRollTable,
+    () => OriginToFactionRollTableEntity,
     (originToFactionRollTable) => originToFactionRollTable.faction,
   )
-  origin: OriginToFactionRollTable[];
+  origin: OriginToFactionRollTableEntity[];
 }
