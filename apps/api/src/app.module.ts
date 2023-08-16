@@ -6,7 +6,6 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { FactionModule } from './imperium-maledictum/faction/faction.module';
 import { OriginModule } from './imperium-maledictum/origin/origin.module';
-import { FactionModule } from './faction/faction.module';
 
 @Module({
   imports: [
