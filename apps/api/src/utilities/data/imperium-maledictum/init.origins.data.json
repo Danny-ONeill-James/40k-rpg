@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Agri World",
+    "rollRangeLow": 1,
+    "rollRangeHigh": 10,
+    "primaryCharacteristic": "str",
+    "secondaryCharacteristic1": "tgh",
+    "secondaryCharacteristic2": "ag",
+    "secondaryCharacteristic3": "wil"
+  },
+  {
+    "name": "Feral World",
+    "rollRangeLow": 11,
+    "rollRangeHigh": 20,
+    "primaryCharacteristic": "tgh",
+    "secondaryCharacteristic1": "ws",
+    "secondaryCharacteristic2": "str",
+    "secondaryCharacteristic3": "per"
+  },
+  {
+    "name": "Feudal World",
+    "rollRangeLow": 21,
+    "rollRangeHigh": 30,
+    "primaryCharacteristic": "ws",
+    "secondaryCharacteristic1": "str",
+    "secondaryCharacteristic2": "wil",
+    "secondaryCharacteristic3": "fel"
+  },
+  {
+    "name": "Forge World",
+    "rollRangeLow": 31,
+    "rollRangeHigh": 40,
+    "primaryCharacteristic": "int",
+    "secondaryCharacteristic1": "bs",
+    "secondaryCharacteristic2": "tgh",
+    "secondaryCharacteristic3": "ag"
+  },
+  {
+    "name": "Hive World",
+    "rollRangeLow": 41,
+    "rollRangeHigh": 70,
+    "primaryCharacteristic": "ag",
+    "secondaryCharacteristic1": "bs",
+    "secondaryCharacteristic2": "per",
+    "secondaryCharacteristic3": "fel"
+  },
+  {
+    "name": "Schola Progenium",
+    "rollRangeLow": 71,
+    "rollRangeHigh": 80,
+    "primaryCharacteristic": "fel",
+    "secondaryCharacteristic1": "ws",
+    "secondaryCharacteristic2": "bs",
+    "secondaryCharacteristic3": "tgh"
+  },
+  {
+    "name": "Shrine World",
+    "rollRangeLow": 81,
+    "rollRangeHigh": 90,
+    "primaryCharacteristic": "wil",
+    "secondaryCharacteristic1": "int",
+    "secondaryCharacteristic2": "per",
+    "secondaryCharacteristic3": "fel"
+  },
+  {
+    "name": "Voidborn",
+    "rollRangeLow": 91,
+    "rollRangeHigh": 100,
+    "primaryCharacteristic": "per",
+    "secondaryCharacteristic1": "ag",
+    "secondaryCharacteristic2": "int",
+    "secondaryCharacteristic3": "wil"
+  }
+]

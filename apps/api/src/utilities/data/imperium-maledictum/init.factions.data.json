@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Adeptus Administratum",
+    "primaryCharacteristic": "int",
+    "secondaryCharacteristic1": "per",
+    "secondaryCharacteristic2": "wil",
+    "secondaryCharacteristic3": "fel"
+  },
+  {
+    "name": "Adeptus Astra Telepathica",
+    "primaryCharacteristic": "wil",
+    "secondaryCharacteristic1": "int",
+    "secondaryCharacteristic2": "per",
+    "secondaryCharacteristic3": "tgh"
+  },
+  {
+    "name": "Adeptus Mechanicus",
+    "primaryCharacteristic": "int",
+    "secondaryCharacteristic1": "tgh",
+    "secondaryCharacteristic2": "ag",
+    "secondaryCharacteristic3": "per"
+  },
+  {
+    "name": "Adeptus Ministorum",
+    "primaryCharacteristic": "wil",
+    "secondaryCharacteristic1": "int",
+    "secondaryCharacteristic2": "per",
+    "secondaryCharacteristic3": "fel"
+  },
+  {
+    "name": "Astra Militarum",
+    "primaryCharacteristic": "tgh",
+    "secondaryCharacteristic1": "ws",
+    "secondaryCharacteristic2": "bs",
+    "secondaryCharacteristic3": "str"
+  },
+  {
+    "name": "Imperial Fleet",
+    "primaryCharacteristic": "ag",
+    "secondaryCharacteristic1": "str",
+    "secondaryCharacteristic2": "tgh",
+    "secondaryCharacteristic3": "per"
+  },
+  {
+    "name": "Infractionist",
+    "primaryCharacteristic": "ag",
+    "secondaryCharacteristic1": "tgh",
+    "secondaryCharacteristic2": "per",
+    "secondaryCharacteristic3": "fel"
+  },
+  {
+    "name": "The Inquisition",
+    "primaryCharacteristic": "per",
+    "secondaryCharacteristic1": "tgh",
+    "secondaryCharacteristic2": "int",
+    "secondaryCharacteristic3": "wil"
+  },
+  {
+    "name": "Rogue Trader Dynasty",
+    "primaryCharacteristic": "fel",
+    "secondaryCharacteristic1": "ag",
+    "secondaryCharacteristic2": "int",
+    "secondaryCharacteristic3": "per"
+  }
+]
