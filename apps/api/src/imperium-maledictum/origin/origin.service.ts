@@ -10,6 +10,7 @@ import { CreateOriginDto } from './dtos/origin.dto';
 import { OriginToFactionRollTableEntity } from './entities/origin-to-faction-roll-table.entity';
 import { OriginEntity } from './entities/origin.entity';
 import { IOrigin } from './interfaces/origin.interface';
+import { IOriginFactionRollTable } from './interfaces/originFactionRollTable.interface';
 
 @Injectable()
 export class OriginService {
@@ -37,14 +38,17 @@ export class OriginService {
 
   async createOriginFactionRollTable(
     neworiginFactionolls: InputOriginFactionRollTableDto[],
-  ): Promise<InputOriginFactionRollTableDto[]> {
+  ): Promise<IOriginFactionRollTable[]> {
+    const createdOriginFactionRollTables: CreateOriginFactionRollTableDto[] =
+      [];
+
     neworiginFactionolls.forEach(async (neworiginFactionoll) => {
       const origin = await this.findOriginByName(neworiginFactionoll.origin);
       const faction = await this.factionService.findFactionByName(
         neworiginFactionoll.faction,
       );
 
-      const factionToAdd: CreateOriginFactionRollTableDto = {
+      const factionToAdd: IOriginFactionRollTable = {
         faction: faction,
         origin: origin,
         rollRangeLow: neworiginFactionoll.rollRangeLow,
@@ -56,15 +60,15 @@ export class OriginService {
           where: { faction: faction, origin: origin },
         }))
       ) {
-        this.originFactionRollTableRepository.save(factionToAdd);
+        await this.originFactionRollTableRepository.save(factionToAdd);
+        createdOriginFactionRollTables.push(factionToAdd);
       }
     });
 
-    return neworiginFactionolls;
+    return createdOriginFactionRollTables;
   }
 
   returnOriginFromDatabase(roll: number): IOrigin {
-    console.log('Roll: ' + roll);
     const origin = this.originRepository.findOneBy({
       rollRangeLow: LessThanOrEqual(roll),
       rollRangeHigh: MoreThanOrEqual(roll),

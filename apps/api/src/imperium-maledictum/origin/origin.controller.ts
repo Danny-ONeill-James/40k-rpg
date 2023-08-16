@@ -1,8 +1,9 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { InputOriginFactionRollTableDto } from './dtos/origin-faction-roll-table.dto';
 import { CreateOriginDto } from './dtos/origin.dto';
 import { IOrigin } from './interfaces/origin.interface';
+import { IOriginFactionRollTable } from './interfaces/originFactionRollTable.interface';
 import { OriginService } from './origin.service';
-import { InputOriginFactionRollTableDto } from './dtos/origin-faction-roll-table.dto';
 
 @Controller('origin')
 export class OriginController {
@@ -21,7 +22,7 @@ export class OriginController {
   @Post('/originFactionRollTable')
   CreateNewOrigonFactionRollTable(
     @Body() originFactionDetails: InputOriginFactionRollTableDto[],
-  ): Promise<InputOriginFactionRollTableDto[]> {
+  ): Promise<IOriginFactionRollTable[]> {
     return this.originService.createOriginFactionRollTable(
       originFactionDetails,
     );

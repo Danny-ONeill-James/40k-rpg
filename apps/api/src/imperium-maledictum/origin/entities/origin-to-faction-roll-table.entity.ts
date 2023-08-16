@@ -8,10 +8,10 @@ export class OriginToFactionRollTableEntity {
   id: string;
 
   @Column()
-  RollRangeLow: number;
+  rollRangeLow: number;
 
   @Column()
-  RollRangeHigh: number;
+  rollRangeHigh: number;
 
   @ManyToOne(() => OriginEntity, (originEntity) => originEntity.faction)
   origin: OriginEntity;
