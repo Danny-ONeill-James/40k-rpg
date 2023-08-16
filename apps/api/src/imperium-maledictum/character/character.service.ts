@@ -253,6 +253,14 @@ export class CharacterService {
 
     character.role = await this.roleService.getRandomRole(character, dice1);
 
+    //TODO: Add talents
+
+    //TODO: Add Skills
+
+    //TODO: Add Specialisations
+
+    //TODO: Add Equiptment
+
     return character;
   }
 }
