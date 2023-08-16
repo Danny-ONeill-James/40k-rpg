@@ -39,6 +39,10 @@ export class CharacterService {
       },
       faction: {
         name: '',
+        primaryCharacteristic: '',
+        secondaryCharacteristic1: '',
+        secondaryCharacteristic2: '',
+        secondaryCharacteristic3: '',
       },
       origin: {
         id: '',

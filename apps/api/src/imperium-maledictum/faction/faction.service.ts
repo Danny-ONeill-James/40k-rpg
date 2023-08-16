@@ -58,6 +58,10 @@ export class FactionService {
     const foundfaction: IFaction = {
       id: returnedFaction!.id,
       name: returnedFaction!.name,
+      primaryCharacteristic: returnedFaction!.primaryCharacteristic,
+      secondaryCharacteristic1: returnedFaction!.secondaryCharacteristic1,
+      secondaryCharacteristic2: returnedFaction!.secondaryCharacteristic2,
+      secondaryCharacteristic3: returnedFaction!.secondaryCharacteristic3,
     };
 
     return foundfaction;

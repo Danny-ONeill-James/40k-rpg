@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "preserveWatchOutput": true,
+    //"preserveWatchOutput": true,
     "module": "commonjs",
     "declaration": true,
     "removeComments": true,
