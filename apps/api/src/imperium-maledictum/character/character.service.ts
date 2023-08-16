@@ -3,6 +3,7 @@ import { FactionService } from '../faction/faction.service';
 import { OriginService } from '../origin/origin.service';
 import { ICharacter } from './interfaces/character.interface';
 import { ICharacteristic } from './interfaces/characteristic.interface';
+import { RoleService } from '../role/role.service';
 
 @Injectable()
 export class CharacterService {
@@ -10,6 +11,8 @@ export class CharacterService {
   private readonly originService: OriginService;
   @Inject(FactionService)
   private readonly factionService: FactionService;
+  @Inject(RoleService)
+  private readonly roleService: RoleService;
 
   async GenerateCharacter(): Promise<ICharacter> {
     let newCharacter: ICharacter = {
@@ -54,15 +57,17 @@ export class CharacterService {
         secondaryCharacteristic2: '',
         secondaryCharacteristic3: '',
       },
+      role: {
+        id: '',
+        name: '',
+      },
     };
 
     newCharacter.name = 'Your Character';
-
     newCharacter = this.generateBaseCharacteristics(newCharacter);
-
     newCharacter = await this.randomOrigin(newCharacter);
-
     newCharacter = await this.randomFation(newCharacter);
+    newCharacter = await this.randomRole(newCharacter);
 
     return newCharacter;
   }
@@ -238,6 +243,23 @@ export class CharacterService {
     //TODO: Add solars (Money)
 
     //TODO: Add Duty
+
+    return character;
+  }
+
+  async randomRole(character: ICharacter): Promise<ICharacter> {
+    const dice = 6; //TODO: Update this away from hard coded
+    const dice1 = Math.floor(Math.random() * dice) + 1;
+
+    character.role = await this.roleService.getRandomRole(character, dice1);
+
+    //TODO: Add talents
+
+    //TODO: Add Skills
+
+    //TODO: Add Specialisations
+
+    //TODO: Add Equiptment
 
     return character;
   }

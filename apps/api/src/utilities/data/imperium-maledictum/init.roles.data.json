@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Interlocutor",
+    "rollNumber": 1
+  },
+  {
+    "name": "Mystic",
+    "rollNumber": 2
+  },
+  {
+    "name": "Penumbra",
+    "rollNumber": 3
+  },
+  {
+    "name": "Savant",
+    "rollNumber": 4
+  },
+  {
+    "name": "Warrior",
+    "rollNumber": 5
+  },
+  {
+    "name": "Zealot",
+    "rollNumber": 6
+  }
+]

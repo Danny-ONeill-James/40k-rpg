@@ -5,6 +5,8 @@ import { FactionService } from '../faction/faction.service';
 import { OriginToFactionRollTableEntity } from '../origin/entities/origin-to-faction-roll-table.entity';
 import { OriginEntity } from '../origin/entities/origin.entity';
 import { OriginService } from '../origin/origin.service';
+import { RoleEntity } from '../role/entities/role.entity';
+import { RoleService } from '../role/role.service';
 import { CharacterController } from './character.controller';
 import { CharacterService } from './character.service';
 
@@ -14,9 +16,10 @@ import { CharacterService } from './character.service';
       OriginEntity,
       OriginToFactionRollTableEntity,
       FactionEntity,
+      RoleEntity,
     ]),
   ],
-  providers: [CharacterService, OriginService, FactionService],
+  providers: [CharacterService, OriginService, FactionService, RoleService],
   controllers: [CharacterController],
 })
 export class CharacterModule {}
